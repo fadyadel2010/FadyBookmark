@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+   <link rel="stylesheet" href="css/style.css">
+   <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/all.js"></script>
+   <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Gochi+Hand&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+            <title>Document</title>
+</head>
+<body>
+    <body>
+      <header> 
+        <h1 class="book-h1">MY BOOKMARKS</h1> 
+    </header> 
+        <form class="bookmark-form d-flex justify-content-center align-items-center flex-column gap-2 was-validated"> 
+          <div class="style-h2">
+            <h2>Bookmark your favorite sites</h2>
+          </div>
+          <div class="d-flex flex-column w-75  gap-3">
+            <div>
+              <label  for="SiteName" class="form-label form-text" ><i class="fa-solid fa-bookmark" style="color:#F80404;"></i><span>   Site Name</span></label>
+              <input  type="text" onkeyup="validateName()"  name="url"   id="SiteName"  placeholder="BookMark Name"   size="50" class="form-control is-invalid"  required pattern="[A-Za-z]{3,}"> 
+            </div>
+            <div>
+              <label for="SiteURL" class="form-label form-text"><i class="fa-solid fa-link" style="color: #F80404"></i><span>   Site URL</span></label>
+              <input type="url"  onkeyup="validateURL()"  name="url"   id="SiteURL"  placeholder="Ex:https://www.google.com/"   size="50" class="form-control is-invalid"  required> 
+            </div>    
+          </div>
+        </form> 
+
+
+
+         <div class="d-flex flex-row justify-content-center align-items-center mt-5">
+          <button id="addBookmark" class="w-25 " type="button" onclick="addweb()" > Add Bookmark</button> 
+          <button id="deleteAll" class="w-25" type="button" onclick="WebClear()"> Delete All Bookmarks </button> 
+        </div>
+
+          <div id="mymodel"> 
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="circles d-flex">
+          <span class="rounded-circle me-2" style="background-color: #f15f5d;"></span>
+          <span class="rounded-circle me-2" style="background-color: #febe2e;"></span>
+          <span class="rounded-circle me-2" style="background-color: #4db748;"></span>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h5 class="model-bodyh5">Site Name or Url is not valid, Please follow the rules below :</h5>
+        <div class="d-flex flex-row align-items-baseline gap-1 arrow-p mt-4">
+          <i class="fa-solid fa-arrow-right arrow"></i><span class="arrow-p">Site name must contain at least 3 characters</span>
+        </div>
+        <div class="d-flex flex-row align-items-baseline gap-1 arrow-p mt-4">
+          <i class="fa-solid fa-arrow-right arrow"></i><span class="arrow-p">Site URL must be a valid one</span>
+        </div>
+       
+      </div>
+      
+    </div>
+  </div>
+          </div>
+          </div>
+
+
+
+        <table  class="table w-75 mx-auto mt-4  align-middle table-striped text-center table-bordered table-hover">
+          <thead>
+              <tr>
+                  <th>Index</th>
+                  <th>Website Name</th>
+                  <th>Visit</th>
+                  <th>Delete</th>
+                 
+              </tr>
+          </thead>
+          <tbody id="myData">
+           
+       
+         
+        </tbody>
+      </table>
+        
+   
+
+  
+
+
+        
+        <script src="js/main.js"></script>
+    
+    </body>
+</body>
+</html>
